@@ -7,7 +7,7 @@
   "scripts": {
     "server": "nodemon ./server.js",
     "start":"node server.js",
-    "build":"npm install"
+    "build":"npm build"
   },
   "author": "ARIF SHAIKH & AADITYA DUBEY",
   "license": "MIT ",
