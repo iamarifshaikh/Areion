@@ -1,7 +1,31 @@
-import "./Contact.css"
-import {MapPin,Phone,At} from 'phosphor-react'
+import { useState } from 'react';
+import { MapPin, Phone, At } from 'phosphor-react';
+import axios from 'axios';
+import "./Contact.css";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.id]: event.target.value });
+  };
+  
+  const handleSubmit = async (event) => {
+    event.preventDefault(); 
+
+    try {
+      const response = await axios.post('http://localhost:3000/api/submit', formData);
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       <section>
@@ -11,13 +35,13 @@ const Contact = () => {
           </h5>
           <h2 className="section-heading text-center left right">Stay connected with us for any reason</h2>
           <div className="contact">
-            <form action="" className="contact__form">
+            <form action="" className="contact__form" onSubmit={handleSubmit}>
               <h1>Write us a message</h1>
-              <input type="text" placeholder="Your Name" required />
-              <input type="email" placeholder="Your Email" required />
-              <input type="text" placeholder="Subject" required />
-              <textarea rows="5" placeholder="Your Message" required></textarea>
-              <button className="btn btn-primary">Send!</button>
+              <input type="text" placeholder="Your Name" id="name" value={formData.name} onChange={handleChange} required />
+              <input type="email" placeholder="Your Email" id="email" value={formData.email} onChange={handleChange} required />
+              <input type="text" placeholder="Subject" id="subject" value={formData.subject} onChange={handleChange} required />
+              <textarea rows="5" placeholder="Your Message" id="message" value={formData.message} onChange={handleChange} required></textarea>
+              <button type="submit" className="btn btn-primary">Send!</button> 
             </form>
             <div className="contact__details">
               <p className="text">
