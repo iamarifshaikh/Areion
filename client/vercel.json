@@ -1,18 +1,12 @@
 {
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
     {
-      "source": "/assets/(.*)",
+      "source": "/(.*).js",
       "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/javascript"
-        }
+        { "key": "Content-Type", "value": "application/javascript" }
       ]
     }
   ]
