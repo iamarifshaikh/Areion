@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { MapPin, Phone, At } from 'phosphor-react';
-import axios from 'axios';
 import "./Contact.css";
 
 const Contact = () => {
@@ -19,8 +18,20 @@ const Contact = () => {
     event.preventDefault(); 
 
     try {
-      const response = await axios.post('https://areion.onrender.com/api/submit', formData);
-      console.log(response.data);
+      const response = await fetch('https://areion.onrender.com/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log(data);
     } catch (error) {
       console.error(error);
     }
