@@ -9,7 +9,7 @@ export const DataComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/data');
+        const response = await axios.get('https://areion.onrender.com/api/data');
         setData(response.data.data);
         setLoading(false);
       } catch (error) {
