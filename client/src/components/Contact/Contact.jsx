@@ -19,7 +19,7 @@ const Contact = () => {
     event.preventDefault(); 
 
     try {
-      const response = await axios.post('http://https://areion.onrender.com//api/submit', formData);
+      const response = await axios.post('http://areion.onrender.com/api/submit', formData);
       console.log(response.data);
     } catch (error) {
       console.error(error);
