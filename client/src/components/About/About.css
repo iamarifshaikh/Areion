@@ -1,0 +1,56 @@
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature {
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px solid var(--color);
+}
+
+.feature__icon {
+    font-size: 2rem;
+    color: var(--color);
+    margin-bottom: 1rem;
+}
+
+.feature__title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.feature__text {
+    font-size: 0.9rem;
+}
+
+.about__details {
+    display: flex;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.about__details-content {
+    width: 50%;
+}
+
+.about__details-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.about__details-content p {
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.about__details-content .btn {
+    margin-top: 1rem;
+}
+
+.about__details-img {
+    width: 50%;
+}

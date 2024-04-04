@@ -1,4 +1,4 @@
-export class Success{
+export className Success{
     constructor(status, message) {
         this.status = status;
         this.message = message;
