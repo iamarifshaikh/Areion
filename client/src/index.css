@@ -13,8 +13,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
+      font-family: var(--primary-font);
+        font-size: 16px;
+        line-height: 1.5;
+        overflow-x: hidden;
+        color: var(--secondary-color);
 }
 
 h1,
@@ -39,42 +49,93 @@ body {
   overflow-x: hidden;
   color: var(--secondary-color);
 }
-/* HEADER */
-header {
-  padding: 1rem 0;
+
+.container {
   width: 100%;
-  position: absolute;
-  z-index: 999;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-
-
-.header__logo img {
-  width: 150px;
-  margin-left: 30px;
-  margin-top: -20px;
-
+.text-center {
+  text-align: center;
 }
 
-.header__menu {
-  gap: 1rem;
+.text-uppercase {
+  text-transform: uppercase;
 }
 
-.header__menu li a {
-  font-size: 0.8rem;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.header__menu li a:hover {
+.text-primary {
   color: var(--primary-color);
 }
 
-header .right {
-  gap: 1rem;
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.menu-btn {
-  font-size: 1.2rem;
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.btn {
+  display: inline-block;
+  max-width: max-content;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: none;
   cursor: pointer;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #a03dd1;
+}
+
+.btn-secondary {
+
+  border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.section-subheading {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.section-heading {
+  font-size: 3rem;
+  max-width: 600px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.section-heading.left {
+  margin-right: auto;
+}
+
+.section-heading.right {
+  margin-left: auto;
 }

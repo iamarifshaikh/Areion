@@ -1,0 +1,40 @@
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.service__title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.service__text {
+    font-size: 0.9re;
+    margin-bottom: 1rem;
+}
+
+.service .arrow-icon {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-left: auto;
+    transition: transform 0.3s;
+
+}
+
+.service:hover .arrow-icon {
+    transform: translateX(5px);
+}
